@@ -1,0 +1,54 @@
+@import './variables.less';
+@import './normalize.less';
+
+*{
+  box-sizing: border-box;
+}
+body{
+  background: @white;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.container{
+	width: 400px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 20px;
+}
+.right{
+  float: right;
+}
+.btn{
+  font-size: @font-size-base;
+  color: @white;
+  background: @white;
+  padding: 7px 15px;
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  &-goal{
+    .btnstyle(@orange);
+  }
+  &-save{
+    .btnstyle(@green);
+  }
+  &-remove{
+    .btnstyle(@white);
+    color: lighten(@black, 20%);
+    padding: 5px;
+    font-size: ceil(@font-size-base - 2);
+    font-weight: 600;
+  }
+}
+.btnstyle (@background) {
+  background-color: @background;
+  border-color: darken(@background, 3%);
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
